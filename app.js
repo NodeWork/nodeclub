@@ -19,6 +19,7 @@ app.configure(function() {
 	app.set('view engine', 'html');
 	app.set('views', viewsRoot);
 	app.register('.html', require('ejs'));
+    app.use(express.limit('500kb'));
 	app.use(express.bodyParser());
 	app.use(express.cookieParser());
 	app.use(express.session({
