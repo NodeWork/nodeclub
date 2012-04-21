@@ -10,6 +10,7 @@ var path = require('path');
 var express = require('express');
 var routes = require('./routes');
 var config = require('./config').config;
+var gzippo = require('gzippo');
 var fs = require('fs');
 
 var app = express.createServer();
@@ -65,6 +66,8 @@ app.configure('production', function(){
 	app.use(express.static(static_dir, { maxAge: maxAge }));
 	app.use(express.errorHandler()); 
 	app.set('view cache', true);
+    app.use(gzippo.staticGzip(static_dir));
+    app.use(gzippo.compress());
 });
 
 // routes
