@@ -3,15 +3,15 @@
  */
 
 exports.config = {
-	name: 'Node Club',
-	description: 'Node Club 是用Node.js开发的社区软件',
+	name: 'HaskellCN Org',
+	description: 'HaskellCN Org',
 	version: '0.2.2',
 
 	// site settings
 	site_headers: [
-		'<meta name="author" content="EDP@TAOBAO" />',
+		'<meta name="author" content="freizl@gmail.com" />',
 	],
-	host: 'http://127.0.0.1', // host 结尾不要添加'/'
+	host: 'http://a.haskellcn.org', // host 结尾不要添加'/'
 	site_logo: '', // default is `name`
 	site_navs: [
 		// [ path, title, [target=''] ]
@@ -22,17 +22,17 @@ exports.config = {
 	db: 'mongodb://127.0.0.1/node_club',
 	session_secret: 'node_club',
 	auth_cookie_name: 'node_club',
-	port: 80,
+	port: 8080,
 
 	// 话题列表显示的话题数量
 	list_topic_count: 20,
 
 	// RSS
 	rss: {
-		title: 'CNode：Node.js专业中文社区',
-		link: 'http://cnodejs.org',
+		title: 'Haskell中文社区',
+		link: 'http://www.haskellcn.org',
 		language: 'zh-cn',
-		description: 'CNode：Node.js专业中文社区',
+		description: 'Haskell中文社区',
 
 		//最多获取的RSS Item数量
 		max_rss_items: 50
@@ -42,8 +42,8 @@ exports.config = {
 	mail_port: 25,
 	mail_user: 'club',
 	mail_pass: 'club',
-	mail_host: 'smtp.126.com',
-	mail_sender: 'club@126.com',
+	mail_host: 'smtp.gmail.com',
+	mail_sender: 'haskellcn.org@gmail.com',
 	mail_use_authentication: true,
 	
 	//weibo app key
