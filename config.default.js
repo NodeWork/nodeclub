@@ -3,8 +3,8 @@
  */
 
 exports.config = {
-	name: 'HaskellCN Org',
-	description: 'HaskellCN Org',
+	name: 'Haskell 中文社区',
+	description: 'Haskell 中文社区',
 	version: '0.2.2',
 
 	// site settings
