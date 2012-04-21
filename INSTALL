@@ -17,6 +17,9 @@ yum install nodejs-compat-symlinks npm
   - npm install ./
   - npm install -g forever
 
+  - export NODE_ENV=production
+  - OR `$ NODE_ENV=production node app.js`
+
 ## MongoDB
   - http://www.if-not-true-then-false.com/2010/install-mongodb-on-fedora-centos-red-hat-rhel/
   - `bind_ip: 127.0.0.1` to config file
