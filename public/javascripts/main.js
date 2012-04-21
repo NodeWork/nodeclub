@@ -3,7 +3,6 @@ $(document).ready(function() {
 		e.preventDefault();
 		search();	
 	});
-	
 	function search() {
 		var q = document.getElementById('q');
 		if (q.value != '') {
@@ -15,7 +14,6 @@ $(document).ready(function() {
 			return false;
 		}		
 	}	
-
 	var $wrapper = $('#wrapper');
 	var $backtotop = $('#backtotop');
 	var top = $(window).height() - $backtotop.height() - 90;
@@ -32,6 +30,5 @@ $(document).ready(function() {
 			$backtotop.fadeOut();
 		}
 	});
-
 	$('.topic_content a,.reply_content a').attr('target', '_blank');
 });

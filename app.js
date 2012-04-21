@@ -10,6 +10,7 @@ var path = require('path');
 var express = require('express');
 var routes = require('./routes');
 var config = require('./config').config;
+var fs = require('fs');
 
 var app = express.createServer();
 
@@ -19,12 +20,18 @@ app.configure(function() {
 	app.set('view engine', 'html');
 	app.set('views', viewsRoot);
 	app.register('.html', require('ejs'));
-    app.use(express.limit('500kb'));
+    app.use(express.limit('200kb'));
 	app.use(express.bodyParser());
 	app.use(express.cookieParser());
 	app.use(express.session({
 		secret: config.session_secret,
 	}));
+
+    var logFile = fs.createWriteStream('/var/log/nodeclub.log', {flags: 'a'}),
+        logFormat =  ':remote-addr - - [:date] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer"';
+                  
+    app.use(express.logger({stream: logFile, format: logFormat}));
+
 	// custom middleware
 	app.use(require('./controllers/sign').auth_user);
 	app.use(express.csrf());
