@@ -1,0 +1,24 @@
+# CentOS
+
+## Config VPS
+  
+## Git
+  - `yum install git`
+
+## NodeJS
+  - https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
+
+~~~~~~
+wget http://nodejs.tchol.org/repocfg/el/nodejs-stable-release.noarch.rpm
+yum localinstall --nogpgcheck nodejs-stable-release.noarch.rpm
+yum install nodejs-compat-symlinks npm
+~~~~~~
+
+  - npm install ./
+  - npm install -g forever
+
+## MongoDB
+  - http://www.if-not-true-then-false.com/2010/install-mongodb-on-fedora-centos-red-hat-rhel/
+  - `bind_ip: 127.0.0.1` to config file
+
+
