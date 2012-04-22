@@ -42,6 +42,7 @@ table: 'class'
 * express/node_modules/connect/lib/middleware/csrf.js 添加：
 
 ```javascript
+// seems around line 79
 if (req.body && req.body.user_action === 'upload_image') return next();
 ```
 
