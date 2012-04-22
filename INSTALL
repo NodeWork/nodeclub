@@ -24,4 +24,27 @@ yum install nodejs-compat-symlinks npm
   - http://www.if-not-true-then-false.com/2010/install-mongodb-on-fedora-centos-red-hat-rhel/
   - `bind_ip: 127.0.0.1` to config file
 
+## IPTABLES
+
+~~~~~~
+`echo 1 > /proc/sys/net/ipv4/ip_forward`
+`net.ipv4.ip_forward = 1` in `/etc/sysctl.conf`
+~~~~~~
+
+~~~~~~
+### forward ports
+### NOTICE :: SEEMS THE DST IP MUST BE PUBLIC IP/HOSTNAME RATHER THAN LOCALHOST
+### EVEN BAD :: the to-port must be open in `filter` ???
+*nat
+-I PREROUTING -p tcp --dst 127.0.0.1 --dport 80 -j REDIRECT --to-port 8080
+-I OUTPUT  -p tcp --dst 127.0.0.1 --dport 80 -j REDIRECT --to-ports 8080
+COMMIT
+*filter
+-A INPUT -p tcp --dport 25 -j ACCEPT
+COMMIT
+~~~~~~
+
+~~~
+iptables < /etc/iptables.firewall.rules
+~~~
 
