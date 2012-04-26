@@ -1,0 +1,2 @@
+var a = db.foo.findOne({'name':'admin222'})
+db.foo.save(a)
