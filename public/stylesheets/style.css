@@ -5,7 +5,7 @@ body,p {
 	font-family: "Helvetica Neue","Georgia" Helvetica, Arial, sans-serif;
 }
 #wrapper {
-	background: #d0d6db;
+	background: #CCC;
 }
 #main {
 	width: 960px;
@@ -25,6 +25,8 @@ body,p {
 #footer {
 	height:200px;
 	clear: both;
+background-color: #DDD
+
 }
 #footer_main {
 	width:920px;
@@ -52,9 +54,11 @@ body,p {
 .sep5{
 	height: 5px;
 }
-.sep10 {
+
+.sep10 {                        
 	height: 10px;
 }
+
 .sp5 {
 	width: 5px;
 	display: inline-block;
@@ -90,7 +94,7 @@ a.light:hover {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-o-border-radius: 3px;
-	border-radius: 3px;
+	border-radius: 5px;
 
 	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
@@ -99,6 +103,7 @@ a.light:hover {
 
 	background-color: #fff;
 	border: 2px solid #fff;
+    margin: 0 0 5px 0;
 }
 .panel .header {
 	padding: 10px;
