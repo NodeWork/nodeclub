@@ -2,7 +2,7 @@
 body,p {
 	font-size: 12px;
 	line-height: 16px;
-	font-family: "Helvetica Neue","Georgia" Helvetica, Arial, sans-serif;
+	font-family: Ubuntu, "Helvetica Neue","Georgia", Helvetica, Arial, sans-serif;
 }
 #wrapper {
 	background: #CCC;
