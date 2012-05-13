@@ -506,6 +506,9 @@ a.count:hover {
 form {
 	margin-bottom: 0px;
 }
+input.span8 {
+	width: 572px;
+}
 textarea {
 	margin-bottom: 0px;
 }
