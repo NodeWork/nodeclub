@@ -78,7 +78,9 @@
 			</span>
 			<% } %>
 			<span class='sp10'></span>
-			<a class='dark' id='share_weibo_btn' href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=<%= config.weibo_key %>',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','分享来自<%= config.name %>的话题：<%= topic.title %>','',''));">分享到 weibo</a>
+			<a id='share_weibo_btn' href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=<%= config.weibo_key %>',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','分享来自<%= config.name %>的话题：<%= topic.title %>','',''));" title="分享到新浪微薄">
+				<i class="icon-share"></i>
+			</a>
 			<% if (locals.current_user) { %>
 				<% if (!topic.in_collection) { %>
 				<button class='btn btn-success fr' id='collect_btn' action='collect'>加入收藏</button>
@@ -88,13 +90,18 @@
 			<% } %>
 			<% if (locals.current_user) { %>
 				<% if (current_user.is_admin) { %>
-				<span class='sp10'></span>
-				<a href='/topic/<%= topic._id %>/edit'><img class='user_icon' src='<%- config.site_static_host %>/images/doc_edit_icon&16.png' title='编辑' /></a>
-				<a href='/topic/<%= topic._id %>/delete' class='delete_topic_btn'><img class='user_icon' src='<%- config.site_static_host %>/images/trash_icon&16.png' title='删除' /></a>
+				<a href='/topic/<%= topic._id %>/edit' title="编辑">
+					<i class="icon-edit"></i>
+				</a>
+				<a href='/topic/<%= topic._id %>/delete' class='delete_topic_btn' title='删除'>
+					<i class="icon-trash"></i>
+				</a>
 				<% } else { %>
 					<% if (current_user._id == topic.author_id) { %>
 					<span class='sp10'></span>
-					<a href='/topic/<%= topic._id %>/edit'><img class='user_icon' src='<%- config.site_static_host %>/images/doc_edit_icon&16.png' title='编辑' /></a>
+					<a href='/topic/<%= topic._id %>/edit' title="编辑">
+	 					<i class="icon-edit"></i>
+					</a>
 					<% } %>
 				<% } %>
 			<% } %>

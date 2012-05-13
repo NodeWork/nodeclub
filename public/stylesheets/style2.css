@@ -354,29 +354,24 @@ a.count:hover {
 #collect_btn {
 	margin-top: -10px;	
 }
-#backtotop {
-	width:16px;
-	color: gray;
-	padding: 10px 4px;
-	display:none;
-	position: fixed;
-	cursor: pointer;
-	text-align: center;
-	background-color: #ffffff;
-	border: 1px dashed gray;
 
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-}
-#share_weibo_btn {
-	padding: 1px 2px;
+a#share_weibo_btn {
+/*	padding: 1px 2px;
 	border: 1px dashed gray;
 
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
-	border-radius: 3px;
+	border-radius: 3px;*/
+
 }
+a#share_weibo_btn .user_icon {
+	width: 56px;
+	height: 76px;
+	border: none;
+	background-position: -20px -76px;
+	background: url("/images/btn_trans.gif");
+}
+
 /* markdown editor */
 .wmd-button-bar {
 	margin-left: 0px;
