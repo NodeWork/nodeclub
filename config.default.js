@@ -30,7 +30,7 @@ exports.config = {
 	// RSS
 	rss: {
 		title: 'Haskell中文社区',
-		link: 'http://www.haskellcn.org',
+		link: 'http://a.haskellcn.org',
 		language: 'zh-cn',
 		description: 'Haskell中文社区',
 
