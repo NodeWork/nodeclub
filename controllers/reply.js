@@ -11,7 +11,8 @@ var user_ctrl = require('./user');
 var message_ctrl = require('./message');
 
 var Util = require('../libs/util');
-var Markdown = require('node-markdown').Markdown;
+// var Markdown = require('node-markdown').Markdown;
+var Showdown = require('../public/libs/showdown');
 var EventProxy = require('eventproxy').EventProxy;
 
 exports.add = function(req,res,next){
@@ -168,7 +169,8 @@ function get_reply_by_id(id,cb){
 		user_ctrl.get_user_by_id(author_id, function(err,author){
 			if(err) return cb(err);
 			if(!reply.content_is_html){
-				reply.content = Markdown(reply.content,true);
+				// reply.content = Markdown(reply.content,true);
+				topic.content = Showdown.parse(topic.content);
 			}
 			reply.author = author;
 			reply.friendly_create_at = Util.format_date(reply.create_at,true);

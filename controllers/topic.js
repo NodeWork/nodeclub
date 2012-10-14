@@ -19,7 +19,8 @@ var tag_ctrl = require('./tag');
 var user_ctrl = require('./user');
 var reply_ctrl = require('./reply');
 var EventProxy = require('eventproxy').EventProxy;
-var Markdown = require('node-markdown').Markdown;
+// var Markdown = require('node-markdown').Markdown;
+var Showdown = require('../public/libs/showdown');
 var Util = require('../libs/util');
 
 /**
@@ -72,7 +73,8 @@ exports.index = function(req, res, next) {
 		topic.save(function(err) {
 			if (!topic.content_is_html) {
 				// trans Markdown to HTML
-				topic.content = Markdown(topic.content, true);
+				// topic.content = Markdown(topic.content, true);
+				topic.content = Showdown.parse(topic.content);
 			}
 			// format date
 			topic.friendly_create_at = Util.format_date(topic.create_at, true);
