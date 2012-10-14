@@ -31,3 +31,8 @@ exports.format_date = function(date,friendly) {
 	
 	return year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
 };
+
+var xss = require('xss');
+exports.xss = function (html) {
+  return xss(html);
+};

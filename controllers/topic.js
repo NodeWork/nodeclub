@@ -74,7 +74,7 @@ exports.index = function(req, res, next) {
 			if (!topic.content_is_html) {
 				// trans Markdown to HTML
 				// topic.content = Markdown(topic.content, true);
-				topic.content = Showdown.parse(topic.content);
+				topic.content = Util.xss(Showdown.parse(topic.content));
 			}
 			// format date
 			topic.friendly_create_at = Util.format_date(topic.create_at, true);

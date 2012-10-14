@@ -170,7 +170,7 @@ function get_reply_by_id(id,cb){
 			if(err) return cb(err);
 			if(!reply.content_is_html){
 				// reply.content = Markdown(reply.content,true);
-				topic.content = Showdown.parse(topic.content);
+				reply.content = Util.xss(Showdown.parse(reply.content));
 			}
 			reply.author = author;
 			reply.friendly_create_at = Util.format_date(reply.create_at,true);
@@ -218,7 +218,8 @@ function get_replies_by_topic_id(id,cb){
 				user_ctrl.get_user_by_id(author_id, function(err,author){
 					if(err) return cb(err);
 					if(!replies[i].content_is_html){
-						replies[i].content = Markdown(replies[i].content,true);
+						// replies[i].content = Markdown(replies[i].content,true);
+						replies[i].content = Util.xss(Showdown.parse(replies[i].content));
 					}
 					replies[i].author = author;
 					replies[i].friendly_create_at = Util.format_date(replies[i].create_at,true);

@@ -535,10 +535,20 @@ code {
 	border: none;
 	line-height: 16px;
 }
+.panel p code {
+	background: hsl(0, 0%, 20%);
+	color: white;
+	padding: 2px 4px;
+	border-radius: 4px;
+	margin: 0px 4px;
+}
 form {
 	overflow: hidden;
 }
 .topic_content p, .reply_content p {
 	font-size: 14px;
 	line-height: 22px;
+}
+.panel pre.prettyprint {
+	border-radius: 4px;
 }
