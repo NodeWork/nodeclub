@@ -536,11 +536,8 @@ code {
 	line-height: 16px;
 }
 .panel p code {
-	background: hsl(0, 0%, 20%);
-	color: white;
 	padding: 2px 4px;
 	border-radius: 4px;
-	margin: 0px 4px;
 }
 form {
 	overflow: hidden;
