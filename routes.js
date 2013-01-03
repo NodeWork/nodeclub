@@ -71,23 +71,23 @@ exports = module.exports = function(app) {
   app.post('/tag/de_collect', tag.de_collect);
 
   // topic
-  app.get('/topic/create', topic.create);
+  //app.get('/topic/create', topic.create);
   app.get('/topic/:tid', topic.index);
-  app.get('/topic/:tid/edit', topic.edit);
-  app.get('/topic/:tid/delete', topic.delete);
-  app.post('/topic/create', topic.create);
-  app.post('/topic/:tid/edit', topic.edit);
+  //app.get('/topic/:tid/edit', topic.edit);
+  //app.get('/topic/:tid/delete', topic.delete);
+  //app.post('/topic/create', topic.create);
+  //app.post('/topic/:tid/edit', topic.edit);
   app.post('/topic/collect', topic.collect);
   app.post('/topic/de_collect', topic.de_collect);
 
   // reply
-  app.post('/:topic_id/reply', reply.add);
-  app.post('/:topic_id/reply2', reply.add_reply2);
-  app.post('/reply/:reply_id/delete', reply.delete);
+  //app.post('/:topic_id/reply', reply.add);
+  //app.post('/:topic_id/reply2', reply.add_reply2);
+  //app.post('/reply/:reply_id/delete', reply.delete);
 
   // upload
-  app.post('/upload/image', upload.upload_image);
-  
+  //app.post('/upload/image', upload.upload_image);
+
   // tools
   app.get('/site_tools', tools.run_site_tools);
 
