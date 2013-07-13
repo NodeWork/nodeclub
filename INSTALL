@@ -45,6 +45,7 @@ COMMIT
 ~~~~~~
 
 ~~~
-iptables < /etc/iptables.firewall.rules
+iptables-restore < /etc/iptables.firewall.rules
+service iptables restart
 ~~~
 
